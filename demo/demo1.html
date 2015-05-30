@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo1</title>
+	<script src="../libs/react/react.js"></script>
+	<script src="../libs/react/JSXTransformer.js"></script>
+</head>
+<body>
+<div id="example1"></div>	
+<div id="example2"></div>	
+<div id="example3"></div>	
+<script type="text/jsx">
+React.render(
+	<h1>hello world</h1>,
+	document.getElementById('example1')
+);	
+
+
+var names = ['guanhui','shiran','baoping'];
+
+React.render(
+	<div>
+		{
+			names.map(function(name){
+				return <div>hello,{name}</div>
+			})
+		}
+	</div>,
+	document.getElementById('example2')
+);
+
+var arr = [
+	<div>hello tae</div>,
+	<div>hello taobao</div>
+];
+
+React.render(
+	<div>{arr}</div>,
+	document.getElementById('example3')
+	)
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo1</title>
+	<script src="../libs/react/react.js"></script>
+	<script src="../libs/react/JSXTransformer.js"></script>
+</head>
+<body>
+<div id="example1"></div>	
+<div id="example2"><div></div></div>	
+<div id="example3"></div>	
+<script type="text/jsx">
+var MyComponent = React.createClass({
+  handleClick : function(){
+    React.findDOMNode(this.refs.myTextInput).focus();
+    console.log(React.findDOMNode(this.refs.myTextInput))
+  },
+
+  showText : function(){
+    React.findDOMNode(this.refs.result).innerHTML = React.findDOMNode(this.refs.myTextInput).value;
+  },
+
+  render : function(){
+    return (
+      <div>
+         <input type="text" ref="myTextInput" onKeyUp={this.showText}/>
+         <input type="button" value="Focus the text input" onClick={this.handleClick}/>
+         <span ref="result"></span>
+      </div>
+    );
+  }
+});
+
+
+React.render(
+  <MyComponent />,
+  document.getElementById('example1')
+);
+
+</script>
+</body>
+</html>

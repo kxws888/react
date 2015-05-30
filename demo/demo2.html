@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo1</title>
+	<script src="../libs/react/react.js"></script>
+	<script src="../libs/react/JSXTransformer.js"></script>
+</head>
+<body>
+<div id="example1"></div>	
+<div id="example2"><div></div></div>	
+<div id="example3"></div>	
+<script type="text/jsx">
+var HelloMessage = React.createClass({
+	render : function(){
+		console.log(this,this.props);
+		return <h1 className="test">hello {this.props.name}</h1>;
+	}
+});
+
+React.render(
+	<HelloMessage name="guanhui" />,
+	document.getElementById('example1')
+);
+
+
+var NotesList = React.createClass({
+  render: function() {
+    return (
+      <ol>
+      {
+        this.props.children.map(function (child) {
+          return <li>{child}</li>
+        })
+      }
+      </ol>
+    );
+  }
+});
+
+React.render(
+	<NotesList>
+    <span>hello</span>
+    <span>world</span>
+  </NotesList>,
+	document.getElementById('example2')
+);
+
+
+</script>
+</body>
+</html>

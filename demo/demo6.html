@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo1</title>
+	<script src="../libs/react/react.js"></script>
+	<script src="../libs/react/JSXTransformer.js"></script>
+</head>
+<body>
+<div id="example1"></div>	
+<div id="example2"><div></div></div>	
+<div id="example3"></div>	
+<script type="text/jsx">
+var Hello = React.createClass({
+  getInitialState : function(){
+    return {
+      opacity : 1.0
+    }
+
+  },
+
+  componentDidMount : function(){
+    this.timer = setInterval(function(){
+      var opacity = this.state.opacity;
+
+      opacity -= 0.05;
+      if(opacity < 0.1){
+
+          opacity = 1.0;
+      }
+
+      this.setState({
+
+        opacity : opacity
+      });
+
+    }.bind(this),100);
+
+  },
+
+  render : function(){
+    return (
+        <div style={{opacity : this.state.opacity}}>Hello {this.props.name}</div>
+      )
+  }
+
+})
+
+React.render(
+  <Hello name="guanhui" />,
+  document.getElementById('example1')
+);
+
+</script>
+</body>
+</html>

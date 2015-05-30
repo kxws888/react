@@ -1,0 +1,22 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "person react study",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kxws888/react.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "gavin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kxws888/react/issues"
+  },
+  "homepage": "https://github.com/kxws888/react"
+}
